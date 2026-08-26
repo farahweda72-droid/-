@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>رحاب البرمجة - منصة تعليم البرمجة الذكية</title>
+
+<!-- وسوم البحث والتعريف الخاصة بجوجل لتمكين العثور على الموقع باسم رحاب البرمجة -->
+<meta name="description" content="منصة رحاب البرمجة لتعلم لغات البرمجة المختلفة بطرق تفاعلية ذكية وسهلة.">
+<meta property="og:site_name" content="رحاب البرمجة">
+<meta property="og:title" content="رحاب البرمجة">
+<meta property="og:url" content="https://yourdomain.com"> <!-- استبدل هذا برابط موقعك الفعلي لاحقاً -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "رحاب البرمجة",
+  "alternateName": ["Rehab Programming", "منصة رحاب البرمجة"],
+  "url": "https://yourdomain.com"
+}
+</script>
+
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0a0c16;
+    --bg-1:#10131f;
+    --card:#151a2c;
+    --card-2:#1a2036;
+    --border:#262c46;
+    --border-soft:#333c5f;
+    --text-main:#f5f7fd;
+    --text-sub:#9298b3;
+    --text-dim:#666d8c;
+    --ok:#3ddc97;
+    --bad:#ff6b6b;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --c1:#5b86e5;
+    --c2:#36d1dc;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(900px 500px at 8% -8%, rgba(91,134,229,0.14), transparent 55%),
+      radial-gradient(800px 480px at 95% 5%, rgba(255,152,32,0.10), transparent 55%),
+      radial-gradient(760px 460px at 50% 105%, rgba(168,85,247,0.10), transparent 55%),
+      var(--bg-0);
+    color:var(--text-main);
+    font-family:'Tajawal',sans-serif;
+    min-height:100vh;
+    padding:52px 20px 90px;
+    overflow-x:hidden;
+  }
+  .page{max-width:1180px;margin:0 auto;}
+
+  /* hero */
+  .hero{text-align:center;margin-bottom:44px;}
+  .hero .brand-badge{
+    display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);
+    border-radius:30px;padding:6px 16px;font-size:12.5px;font-weight:700;color:var(--text-sub);margin-bottom:18px;
+  }
+  .hero .brand-badge span.dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(90deg,#5b86e5,#f89820,#ffd43b);}
+  .hero h1{
+    font-size:clamp(30px,4.6vw,48px);
+    font-weight:900;
+    margin:0 0 14px;
+    letter-spacing:-0.5px;
+    background:linear-gradient(90deg,#36d1dc,#5b86e5,#a855f7,#f89820,#ffd43b,#36d1dc);
+    background-size:250% auto;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shimmer 8s linear infinite;
+  }
+  @keyframes shimmer{ to{ background-position:250% center; } }
+  .hero p.subtitle{
+    color:var(--text-sub);font-size:16px;font-weight:500;margin:0;max-width:560px;margin-inline:auto;line-height:1.8;
+  }
+
+  /* language grid */
+  .lang-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:18px;margin-bottom:30px;}
+  .lang-card{
+    position:relative;overflow:hidden;background:linear-gradient(160deg,var(--card-2),var(--card));
+    border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:40px 14px 28px;text-align:center;
+    cursor:pointer;transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .lang-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--lc1),var(--lc2));}
+  .lang-card:hover{
+    transform:translateY(-4px);border-color:var(--border-soft);
+    box-shadow:0 14px 32px -14px color-mix(in srgb, var(--lc1) 55%, transparent);
+  }
+  .lang-icon{
+    width:64px;height:64px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(135deg,var(--lc1),var(--lc2));
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px -8px color-mix(in srgb, var(--lc1) 60%, transparent);
+  }
+  .lang-icon svg{width:32px;height:32px;fill:none;stroke:#fff;stroke-width:2;}
+  .lang-card .lang-label{font-size:20px;font-weight:800;unicode-bidi:isolate;direction:ltr;display:inline-block;}
+  .lang-card.active{border-color:var(--lc1);box-shadow:0 0 0 1.5px var(--lc1), 0 0 30px color-mix(in srgb, var(--lc1) 45%, transparent);}
+  .lang-card.active .lang-label{background:linear-gradient(90deg,var(--lc1),var(--lc2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  /* tools */
+  .tools-section{margin-top:38px;}
+  .tools-caption{text-align:center;color:var(--text-dim);font-size:14px;font-weight:500;margin-bottom:16px;}
+  .tools-caption b{color:var(--c1);font-weight:800;}
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:16px;}
+  .tool-btn{
+    background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:20px 10px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;color:var(--text-sub);
+    transition:all .16s ease;font-family:inherit;
+  }
+  .tool-btn svg{width:26px;height:26px;fill:none;stroke:var(--text-sub);stroke-width:2;transition:stroke .16s ease;}
+  .tool-btn span{font-weight:700;font-size:15px;}
+  .tool-btn:hover{border-color:var(--border-soft);color:var(--text-main);}
+  .tool-btn:hover svg{stroke:var(--text-main);}
+  .tool-btn.active{
+    border-color:var(--c1);background:linear-gradient(160deg,color-mix(in srgb,var(--c1) 16%,transparent),transparent);
+    color:var(--c2);box-shadow:0 0 20px color-mix(in srgb,var(--c1) 22%,transparent);
+  }
+  .tool-btn.active svg{stroke:var(--c2);}
+
+  /* content area */
+  .content-area{margin-top:40px;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:32px;}
+  .panel-title{font-size:22px;font-weight:800;margin:0 0 6px;}
+  .panel-title .accent{color:var(--c1);}
+  .panel-sub{color:var(--text-dim);font-size:14px;margin:0 0 24px;}
+  .tool-panel{display:none;}
+  .tool-panel.active{display:block;}
+
+  /* videos */
+  .video-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;}
+  .video-card{
+    background:var(--card-2);border:1.5px solid var(--border);border-radius:var(--radius-md);
+    overflow:hidden;display:block;text-decoration:none;color:inherit;transition:border-color .15s, transform .15s;
+  }
+  .video-card:hover{border-color:var(--c1);transform:translateY(-2px);}
+  .video-card .thumb-wrap{position:relative;padding-top:56.25%;background:linear-gradient(135deg,var(--c1),var(--c2));overflow:hidden;}
+  .video-card .play-badge{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);}
+  .video-card .play-badge svg{width:48px;height:48px;fill:#fff;transition:transform .15s;}
+  .video-card:hover .play-badge svg{transform:scale(1.1);fill:var(--c1);}
+  .video-card .v-title{padding:14px 16px;font-weight:700;font-size:14.5px;line-height:1.5;}
+  .video-card .v-open{padding:0 16px 14px;font-size:12.5px;color:var(--text-dim);font-weight:600;}
+
+  /* summary */
+  .summary-card{line-height:2;font-size:15.5px;color:#dfe3ef;}
+  .summary-card h4{color:var(--c2);font-size:18px;font-weight:800;margin:0 0 12px;}
+
+  /* ai chat specific */
+  .chat-box {display:flex;flex-direction:column;height:350px;background:var(--bg-0);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;}
+  .chat-messages {flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
+  .msg {max-width:80%;padding:10px 14px;border-radius:var(--radius-sm);font-size:14.5px;line-height:1.5;}
+  .msg.user {background:var(--c1);color:#fff;align-self:flex-start;}
+  .msg.ai {background:var(--card-2);color:var(--text-main);border:1px solid var(--border);align-self:flex-end;}
+  .chat-input-area {display:flex;border-top:1px solid var(--border);background:var(--card-2);}
+  .chat-input-area input {flex:1;background:none;border:none;padding:16px;color:#fff;font-family:inherit;font-size:14.5px;outline:none;}
+  .chat-input-area button {background:var(--c1);border:none;color:#fff;padding:0 24px;font-family:inherit;font-weight:700;cursor:pointer;transition:background 0.2s;}
+  .chat-input-area button:hover {background:var(--c2);}
+</style>
+</head>
+<body>
+
+  <div class="page">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="brand-badge"><span class="dot"></span>منصة رحاب البرمجة</div>
+      <h1>مرحباً بك في عالم التطوير</h1>
+      <p class="subtitle">اختر لغة البرمجة التي تريد إتقانها، وابدأ رحلتك التفاعلية الذكية الآن.</p>
+    </div>
+
+    <!-- Languages Grid -->
+    <div class="lang-grid">
+      <div class="lang-card active" data-lang="python" style="--lc1: #ffd43b; --lc2: #3572A5;">
+        <div class="lang-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2动2h2v2H12zM4 12h2v2H4z"/></svg>
+        </div>
+        <span class="lang-label">Python</span>
+      </div>
+      <div class="lang-card" data-lang="javascript" style="--lc1: #f7df1e; --lc2: #f19820;">
+        <div class="lang-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg>
+        </div>
+        <span class="lang-label">JavaScript</span>
+      </div>
+      <div class="lang-card" data-lang="htmlcss" style="--lc1: #e34c26; --lc2: #264de4;">
+        <div class="lang-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20z"/></svg>
+        </div>
+        <span class="lang-label">HTML & CSS</span>
+      </div>
+      <div class="lang-card" data-lang="cpp" style="--lc1: #00599c; --lc2: #00447c;">
+        <div class="lang-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/></svg>
+        </div>
+        <span class="lang-label">C++</span>
+      </div>
+    </div>
+
+    <!-- Tools Section -->
+    <div class="tools-section">
